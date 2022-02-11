@@ -10,6 +10,6 @@ app.use(express.json())
 
 app.use('/api/people', peopleRoutes)
 
-app.listen(3001, () => console.log('Backend is Running'))
+app.listen(process.env.PORT, () => console.log(`Listening on port ${process.env.PORT}`))
 
 
