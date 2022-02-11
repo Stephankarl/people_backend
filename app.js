@@ -1,5 +1,13 @@
+require('dotenv').config()
 const express = require('express')
+const mongoose = require('mongoose')
 const cors = require('cors')
+
+mongoose.connect(process.env.DB_URL, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+}).then(() => console.log('DB Connected'))
+.catch(err => console.log(err))
 
 const peopleRoutes = require('./routes/peopleRoutes')
 
